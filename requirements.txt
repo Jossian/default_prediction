@@ -1,0 +1,9 @@
+xlrd
+pandas
+seaborn
+matplotlib
+sklearn
+imblearn
+collections
+pyarrow
+hyperopt

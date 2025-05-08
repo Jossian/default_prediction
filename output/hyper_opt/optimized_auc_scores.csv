@@ -1,0 +1,11 @@
+model,auc,params
+LogisticRegression,0.6688809884615091,"{'maxIter': [0], 'regParam': [0.016055663423035115], 'model': ['LogisticRegression']}"
+LogisticRegression,0.669030962554695,"{'maxIter': [0], 'regParam': [0.04931657268746942], 'model': ['LogisticRegression']}"
+LogisticRegression,0.6689980650116734,"{'maxIter': [0], 'regParam': [0.04689671546347246], 'model': ['LogisticRegression']}"
+LogisticRegression,0.6690290274051056,"{'maxIter': [2], 'regParam': [0.08167429265567701], 'model': ['LogisticRegression']}"
+LogisticRegression,0.6689032426817884,"{'maxIter': [2], 'regParam': [0.025544741646966285], 'model': ['LogisticRegression']}"
+LogisticRegression,0.6689400105239888,"{'maxIter': [0], 'regParam': [0.024706989262524584], 'model': ['LogisticRegression']}"
+LogisticRegression,0.6690251571059265,"{'maxIter': [0], 'regParam': [0.0843064898783371], 'model': ['LogisticRegression']}"
+LogisticRegression,0.6688790533119195,"{'maxIter': [1], 'regParam': [0.007739593744325302], 'model': ['LogisticRegression']}"
+LogisticRegression,0.6690319301294895,"{'maxIter': [2], 'regParam': [0.05051456459838974], 'model': ['LogisticRegression']}"
+LogisticRegression,0.6688751830127414,"{'maxIter': [0], 'regParam': [0.01068188950860859], 'model': ['LogisticRegression']}"

@@ -1,0 +1,6 @@
+model,tn,fp,fn,tp
+LogisticRegression,2838,1835,517,810
+GBTClassifier,3743,930,634,693
+RandomForest,3838,835,689,638
+SVM,2936,1737,529,798
+MLP,3314,1359,562,765
