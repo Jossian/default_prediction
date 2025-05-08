@@ -61,12 +61,7 @@ df = df.drop('BILL_AMT4', 'BILL_AMT5', 'BILL_AMT6', 'BILL_features')
 
 feature_cols = [col for col in df.columns if col != label_col]
 print("feature_cols: ", feature_cols)
-
-
-
-
-
-df.select("PAY_AMT4").summary().show()
+#df.select("PAY_AMT4").summary().show()
 
 #Ensamblar y escalar solo las features
 assembler = VectorAssembler(inputCols=feature_cols, outputCol="features_raw")
@@ -87,20 +82,18 @@ for i, name in enumerate(scaled_col_names):
 
 # Mantener únicamente las columnas necesarias + el label
 df_scaled = df_scaled.select(*scaled_col_names, label_col)
-print(df_scaled.columns)
-df_scaled.select("PAY_AMT4").summary().show()
+
+# Heatmap (opcional)
+corr_matrix=df_scaled.toPandas().corr()
+plt.figure(figsize=(12, 8))
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
+plt.title("Matriz de Correlación")
+plt.show()
 # Separar train y test
 train_df, test_df = df_scaled.randomSplit([0.8, 0.2], seed=42)
 # Guardar como Parquet
-#train_df.write.mode("overwrite").parquet("D:\Documentos\Blue_tab_prueba\proyecto_analisis_datos\data\processed\PAY_AMT4_regression_train.parquet")
-#test_df.write.mode("overwrite").parquet("proyecto_analisis_datosdata/data/processed/PAY_AMT4_regression_test.parquet")
-train_df.toPandas().to_parquet(
-    "proyecto_analisis_datos/data/processed/PAY_AMT4_regression_train.parquet"
-)
-train_df.toPandas().to_parquet(
-    "proyecto_analisis_datos/data/processed/PAY_AMT4_regression_test.parquet"
-)
-#output_path = "D:\Documentos\Blue_tab_prueba\proyecto_analisis_datos\data\processed\PAY_AMT4_regression_train.parquet"
-#train_df.write.mode("overwrite").parquet(output_path)
+#train_df.toPandas().to_parquet("proyecto_analisis_datos/data/processed/PAY_AMT4_regression_train.parquet")
+#train_df.toPandas().to_parquet( "proyecto_analisis_datos/data/processed/PAY_AMT4_regression_test.parquet")
+
 # Finalizar sesión de Spark
 spark.stop()

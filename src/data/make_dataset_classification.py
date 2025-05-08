@@ -93,5 +93,5 @@ def balance_train_data(train_df, target_col='default payment next month', random
 train_df_balanced = balance_train_data(train_df)
 
 # Guardar como Parquet
-train_df_balanced.to_parquet("proyecto_analisis_datos/data/processed/default_classification_train.parquet", index=False)
-test_df.to_parquet("proyecto_analisis_datos/data/processed/default_classification_test.parquet", index=False)
+#train_df_balanced.to_parquet("proyecto_analisis_datos/data/processed/default_classification_train.parquet", index=False)
+#test_df.to_parquet("proyecto_analisis_datos/data/processed/default_classification_test.parquet", index=False)
